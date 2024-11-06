@@ -22,6 +22,12 @@ navLinks.forEach(link => {
     });
 });
 
+window.addEventListener('scroll', () => {
+  if (navbar.classList.contains('active')) {
+      navbar.classList.remove('active');
+      menuToggle.classList.remove('active');
+  }
+});
 
 let lastScrollY = window.scrollY;
 const header = document.querySelector('.header');
@@ -32,5 +38,38 @@ window.addEventListener('scroll', () => {
     header.classList.remove('hidden');
   }
   lastScrollY = window.scrollY;
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const navLinks = document.querySelectorAll('.navbar a');
+  const sections = document.querySelectorAll('sections');
+  
+  function setActiveLink(){
+    let currentSection = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 50;
+      const sectionBottom = sectionTop + section.offseheight;
+      
+      if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').substring(1) === currentSection) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  setActiveLink();
+  window.addEventListener('scroll', setActiveLink);
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      navLinks.forEach(item => item.classList.remove('.active'));
+      this.classList.add('active');
+    });
+  });
 });
 
