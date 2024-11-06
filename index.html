@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
-            src="https://unpkg.com/htmx.org@1.9.10"
-            integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
-            crossorigin="anonymous"
-        ></script>
+      src="https://unpkg.com/htmx.org@1.9.10"
+      integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+      crossorigin="anonymous"
+    ></script>
     <title>Portfolio</title>
-    <link rel="icon" type="favicon" href="icons/favicon.png">
-    <link rel="stylesheet" href="./styles/pages/index.css">
-    <link rel="stylesheet" href="stylesheet.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="favicon" href="icons/favicon.png" />
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header
-            data-hx-trigger="load"
-            data-hx-swap="outerHTML"
-            data-hx-get="header.partial.html"
-        ></header>
-        <section
-            data-hx-trigger="load"
-            data-hx-swap="outerHTML"
-            data-hx-get="about.partial.html"
-        ></section>
-        <section
-            data-hx-trigger="load"
-            data-hx-swap="outerHTML"
-            data-hx-get="technical.skill.partial.html"
-        ></section>
-        <script type="module" src="./scripts/index.js"></script>
-</body>
+      data-hx-trigger="load"
+      data-hx-swap="outerHTML"
+      data-hx-get="header.partial.html"
+    ></header>
+    <section
+      data-hx-trigger="load"
+      data-hx-swap="outerHTML"
+      data-hx-get="about.partial.html"
+    ></section>
+    <section
+      data-hx-trigger="load"
+      data-hx-swap="outerHTML"
+      data-hx-get="technical.skill.partial.html"
+    ></section>
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
 </html>
