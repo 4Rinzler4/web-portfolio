@@ -1,4 +1,5 @@
 function init() {
+    import("./global.js");
     import("./header.js");
 }
 

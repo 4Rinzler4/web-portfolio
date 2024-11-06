@@ -21,3 +21,16 @@ navLinks.forEach(link => {
         menuToggle.classList.remove('active'); 
     });
 });
+
+
+let lastScrollY = window.scrollY;
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > lastScrollY) {
+    header.classList.add('hidden');
+  } else {
+    header.classList.remove('hidden');
+  }
+  lastScrollY = window.scrollY;
+});
+
