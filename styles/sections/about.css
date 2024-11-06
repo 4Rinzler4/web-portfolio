@@ -1,13 +1,10 @@
-.about {
-  display: grid;
-}
-
 .about__container {
-  display: grid;
+  display: block;
   text-align: center;
 }
 
 .about__img {
+  margin-top: 50px;
   width: 100%;
   height: 300px;
   overflow: hidden;
@@ -25,11 +22,19 @@
   box-shadow: 0 0 5px var(--color-pink), 0 0 25px var(--color-pink),
     0 0 50px var(--color-pink), 0 0 100px var(--color-pink),
     0 0 200px var(--color-pink);
+  transition: transform 3s ease;
+}
+
+.about__img img:hover {
+  transform: scale(1.5);
 }
 
 .about__title {
   font-size: 60px;
   margin-bottom: 12px;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 2s;
+  opacity: 0;
 }
 .about__title span {
   color: var(--color-pink);
@@ -37,6 +42,9 @@
 
 .about__descriptions {
   font-size: 32px;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 2s;
+  opacity: 0;
 }
 
 .about__text {
@@ -44,6 +52,4 @@
   margin-bottom: 32px;
   line-height: 1.5;
   margin: 20px 50px 30px;
-  box-shadow: inset 0 0 5px var(--color-header);
-  border-radius: 20px;
 }
