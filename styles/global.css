@@ -7,7 +7,10 @@
   --background-color: #141414;; 
   --color-ablue: #E1F5FE; 
   --color-black: #212121; 
+  --color-dark-black: #000000;
   --color-black-fade: rgba(46, 46, 46, 0.85); 
+
+  overflow: hidden;
 }
 
 h1,
