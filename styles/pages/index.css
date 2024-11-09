@@ -1,5 +1,6 @@
 @import url(../reset.css);
 @import url(../global.css);
+@import url(../loader.css);
 @import url(../sections/header.css);
 @import url(../sections/about.css);
 @import url(../sections/skills.css);
