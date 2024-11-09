@@ -1,0 +1,97 @@
+.skills {
+    justify-content: center;
+}
+
+.skills__container {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+.skills__title {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 56px;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    span {
+        color: var(--color-pink);
+    }
+}
+
+.skills__cards {
+    display: flex;
+    max-width: 500px;
+    position: relative;
+    justify-content: center;
+}
+
+.card__info {
+    transition: transform 0.3s ease;
+    height: 340px;
+    border: 0.4px solid var(--color-pink);
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 0 5px var(--color-pink), 0 0 25px var(--color-pink);
+}
+
+@media (max-width: 480px) {
+    .card__info {
+        height: auto;
+    }
+}
+
+.card__info:hover {
+    transform:translateY(-10px);
+}
+
+.card__info i {
+    font-size: 50px;
+}
+
+.title__card {
+    margin: 10px;
+    font-family: 'popins', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: 3px;
+    span {
+        color: var(--color-pink);
+    }
+}
+
+.card__text {
+    margin-top: 10px;
+    line-height: 1.5;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--color-pink);
+    border-radius: 40px;
+    color: var(--color-ablue);
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    margin: 30px;
+    box-shadow: 0 0 5px var(--color-pink), 0 0 10px var(--color-pink);
+}
+
+.card-button:hover {
+    background-color: var(--color-ablue);
+    color: var(--background-color);
+    cursor: url(../../images/cursors/light_pointer.png), pointer;
+    box-shadow: 0 0 5px var(--color-pink), 0 0 25px var(--color-pink),
+    0 0 50px var(--color-pink);
+}

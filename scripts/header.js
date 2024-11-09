@@ -1,27 +1,31 @@
+// Анімація тексту з виправленням орфографії
 const typed = new Typed(".text", {
-    strings: ["Student", "Begginer Frontend Developer", "Begginer Web Developer"],
+    strings: ["Student", "Beginner Frontend Developer", "Beginner Web Developer"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
 });
 
+// Анімація меню та навігаційних посилань
 const menuToggle = document.getElementById('menu-toggle');
 const navbar = document.getElementById('navbar');
+const navLinks = document.querySelectorAll('.navbar a');
 
 menuToggle.addEventListener('click', function() {
-    navbar.classList.toggle('active'); 
-    menuToggle.classList.toggle('active'); 
+    navbar.classList.toggle('active');
+    menuToggle.classList.toggle('active');
 });
 
-const navLinks = document.querySelectorAll('.navbar a');
+// Закриття меню при кліку на посилання
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        navbar.classList.remove('active'); 
-        menuToggle.classList.remove('active'); 
+        navbar.classList.remove('active');
+        menuToggle.classList.remove('active');
     });
 });
 
+// Закриття меню при скролі сторінки
 window.addEventListener('scroll', () => {
   if (navbar.classList.contains('active')) {
       navbar.classList.remove('active');
@@ -29,6 +33,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
+// Приховання шапки при скролі вниз
 let lastScrollY = window.scrollY;
 const header = document.querySelector('.header');
 window.addEventListener('scroll', () => {
@@ -40,11 +45,8 @@ window.addEventListener('scroll', () => {
   lastScrollY = window.scrollY;
 });
 
-
-
-/*
+// Активне посилання навігації на основі поточного розділу
 document.addEventListener('DOMContentLoaded', function () {
-  const navLinks = document.querySelectorAll('.navbar a');
   const sections = document.querySelectorAll('section');
   
   function setActiveLink() {
@@ -66,9 +68,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Встановлення активного посилання при завантаженні та при скролі
   setActiveLink();
   window.addEventListener('scroll', setActiveLink);
 
+  // Додавання класу активного посилання при кліку
   navLinks.forEach(link => {
     link.addEventListener('click', function () {
       navLinks.forEach(item => item.classList.remove('active'));
@@ -76,5 +80,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-*/
-
