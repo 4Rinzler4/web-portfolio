@@ -46,7 +46,7 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: var(--color-header); 
   border-radius: 5px;
-  border: 2px solid var(--color-pink);
+  border: 1px solid var(--color-pink);
 }
 
 @keyframes showText {

@@ -2,7 +2,7 @@
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
       url(../../images/bg.about.jpg) no-repeat center center/cover;
   width: 100%;
-  height: auto;
+  height: 100vh;
 }
 
 .about__container {
