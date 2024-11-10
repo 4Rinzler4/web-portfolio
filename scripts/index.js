@@ -1,6 +1,6 @@
 function init() {
     import("./global.js");
-    import("./loader.js");
+    /*import("./loader.js");*/
     import("./header.js");
 }
 
