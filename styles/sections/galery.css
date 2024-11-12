@@ -17,11 +17,13 @@
     overflow: hidden;
     margin-bottom: 20px;
     margin-top: 50px;
+    transition: transform 0.3s ease;
   }
   
   .embla__viewport {
     overflow: hidden;
     width: 100%;
+    transition: transform 0.3s ease;
   }
   
   .embla__container {

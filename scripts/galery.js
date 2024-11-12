@@ -1,75 +1,45 @@
 const checkCarousel = () => {
-  const carouselRightNode = document.querySelector(".embla--right .embla__viewport");
-  const carouselLeftNode = document.querySelector(".embla--left .embla__viewport");
+  const carousels = [
+    { node: document.querySelector(".embla--right .embla__viewport"), direction: "next" },
+    { node: document.querySelector(".embla--left .embla__viewport"), direction: "prev" }
+  ];
 
-  const slidesRightContainer = document.querySelector(".embla--right .embla__container");
-  const slidesLeftContainer = document.querySelector(".embla--left .embla__container");
+  carousels.forEach((carousel) => {
+    const slidesContainer = carousel.node.closest(".embla").querySelector(".embla__container");
+    const slides = Array.from(slidesContainer.querySelectorAll(".embla__slide"));
 
-  const slidesRight = Array.from(document.querySelectorAll(".embla--right .embla__slide"));
-  const slidesLeft = Array.from(document.querySelectorAll(".embla--left .embla__slide"));
+    if (carousel.node && slidesContainer && slides.length > 1) {
+      const repeatCount = 4;
 
-  if (carouselRightNode && carouselLeftNode && slidesRightContainer && slidesLeftContainer && slidesRight.length > 1 && slidesLeft.length > 1) {
-    const repeatCount = 4;
+      for (let i = 0; i < repeatCount; i++) {
+        const startClones = slides.map((slide) => slide.cloneNode(true));
+        const endClones = slides.map((slide) => slide.cloneNode(true)).reverse();
 
-    for (let i = 0; i < repeatCount; i++) {
-      const startClonesRight = slidesRight.map((slide) => slide.cloneNode(true));
-      const endClonesRight = slidesRight.map((slide) => slide.cloneNode(true)).reverse();
+        endClones.forEach((clone) => slidesContainer.insertBefore(clone, slidesContainer.firstChild));
+        startClones.forEach((clone) => slidesContainer.appendChild(clone));
+      }
 
-      endClonesRight.forEach((clone) =>
-        slidesRightContainer.insertBefore(clone, slidesRightContainer.firstChild)
-      );
-      startClonesRight.forEach((clone) => slidesRightContainer.appendChild(clone));
+      const emblaApi = EmblaCarousel(carousel.node, { align: "start", loop: true });
+      emblaApi.on("init", () => {
+        emblaApi.scrollTo(slides.length * repeatCount, false);
+      });
 
-      const startClonesLeft = slidesLeft.map((slide) => slide.cloneNode(true));
-      const endClonesLeft = slidesLeft.map((slide) => slide.cloneNode(true)).reverse();
+      let scrollInterval;
+      const scrollSpeed = 5000; 
 
-      endClonesLeft.forEach((clone) =>
-        slidesLeftContainer.insertBefore(clone, slidesLeftContainer.firstChild)
-      );
-      startClonesLeft.forEach((clone) => slidesLeftContainer.appendChild(clone));
+      const startContinuousScroll = () => {
+        scrollInterval = setInterval(() => {
+          carousel.direction === "next" ? emblaApi.scrollNext() : emblaApi.scrollPrev();
+        }, scrollSpeed);
+      };
+
+      const stopContinuousScroll = () => clearInterval(scrollInterval);
+
+      startContinuousScroll();
+      carousel.node.addEventListener("mouseenter", stopContinuousScroll);
+      carousel.node.addEventListener("mouseleave", startContinuousScroll);
     }
-
-    const options = { align: "start", loop: true };
-
-    const emblaRightApi = EmblaCarousel(carouselRightNode, options);
-    const emblaLeftApi = EmblaCarousel(carouselLeftNode, options);
-
-    emblaRightApi.on("init", () => {
-      emblaRightApi.scrollTo(slidesRight.length * repeatCount, false);
-    });
-    emblaLeftApi.on("init", () => {
-      emblaLeftApi.scrollTo(slidesLeft.length * repeatCount, false);
-    });
-
-    const scrollSpeed = 1; 
-
-    
-    const startContinuousScrollRight = () => {
-      const scrollRight = () => {
-        emblaRightApi.scrollBy(scrollSpeed, true); 
-        requestAnimationFrame(scrollRight);
-      };
-      requestAnimationFrame(scrollRight);
-    };
-
-    const startContinuousScrollLeft = () => {
-      const scrollLeft = () => {
-        emblaLeftApi.scrollBy(-scrollSpeed, false);
-        requestAnimationFrame(scrollLeft);
-      };
-      requestAnimationFrame(scrollLeft);
-    };
-
-    startContinuousScrollRight();
-    startContinuousScrollLeft();
-
-    setInterval(() => {
-      startContinuousScrollRight();
-      startContinuousScrollLeft();
-    }, 400); 
-  } else {
-    setTimeout(checkCarousel, 100);
-  }
+  });
 };
 
 checkCarousel();

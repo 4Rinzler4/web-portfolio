@@ -43,7 +43,7 @@
 
 .navbar a:hover,
 .navbar a.active {
-  color: var(--color-pink);
+  color: var(--color-high-pink);
   text-shadow: 0 0 5px var(--background-color), 0 0 25px var(--background-color),
     0 0 50px var(--color-white);
   transition: 0.5s;
@@ -106,6 +106,7 @@
     border-radius: 5px;
     z-index: 9;
     border-radius: 10px;
+    overflow: hidden;
   }
 
   .active {
