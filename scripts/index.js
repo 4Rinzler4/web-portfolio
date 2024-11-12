@@ -2,6 +2,7 @@ function init() {
     import("./global.js");
     /*import("./loader.js");*/
     import("./header.js");
+    import("./galery.js");
 }
 
 const totalPartials = document.querySelectorAll(
