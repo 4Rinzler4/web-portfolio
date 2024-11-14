@@ -208,8 +208,8 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   background: transparent;
   border: 2px solid var(--color-pink);
   border-radius: 50%;
@@ -224,7 +224,7 @@
 }
 
 .home__content-sci a:hover {
-  background: var(--color-pink);
+  background: var(--color-white);
   color: var(--background-color);
   box-shadow: 0 0 20px var(--color-pink);
 }
@@ -234,7 +234,7 @@
   padding: 12px 28px;
   background-color: var(--color-pink);
   border-radius: 40px;
-  color: var(--background-color);
+  color: var(--color-dark-black);
   letter-spacing: 1px;
   text-decoration: none;
   font-weight: 600;
@@ -245,6 +245,7 @@
 }
 
 .btn-box:hover {
+  background-color: var(--color-white);
   box-shadow: 0 0 5px var(--color-pink), 0 0 25px var(--color-pink),
     0 0 50px var(--color-pink), 0 0 100px var(--color-pink),
     0 0 200px var(--color-pink);
