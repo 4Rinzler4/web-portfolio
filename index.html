@@ -48,13 +48,20 @@
       data-hx-get="galery.partial.html"
     ></section>
 
-    <!-- Contact section laded dynamically -->
-     <footer
+    <!-- Contact section loaded dynamically -->
+     <section
       data-hx-trigger="load"
       data-hx-swap="outerHTML"
       data-hx-get="contact.partial.html"
-      ></footer>
-      
+      ></section>
+     
+    <!-- Footer loaded dynamically -->
+     <footer
+     data-hx-trigger="laod"
+     data-hx-swap="outerHTML"
+     data-hx-get="footer.partial.html"
+     ></footer>
+
     <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
