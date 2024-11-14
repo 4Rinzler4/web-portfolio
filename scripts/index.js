@@ -3,6 +3,7 @@ function init() {
     /*import("./loader.js");*/
     import("./header.js");
     import("./galery.js");
+    import("./contact.js");
 }
 
 const totalPartials = document.querySelectorAll(

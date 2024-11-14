@@ -1,4 +1,3 @@
-// Анімація тексту з виправленням орфографії
 const typed = new Typed(".text", {
     strings: ["Student", "Beginner Frontend Developer", "Beginner Web Developer"],
     typeSpeed: 100,

@@ -1,8 +1,23 @@
-<footer class="contact" id="contact">
-        <div class="video-background">
-            <video autoplay muted loop>
-                <source src="video/video.contact.mp4" type="video/mp4"/>
-            </video>
-        </div>
-        <div class="overlay"></div>
-</footer>
+<section class="contact" id="contact">
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="video/video.contact.mp4" type="video/mp4"/>
+        </video>
+    </div>
+    <div class="overlay"></div>
+    <div class="content">
+        <h2>Contact <span>Me</span></h2>
+        <form action="#" method="post">
+            <div class="form__subtitle" for="name">Enter Your Name:</div>
+            <input type="text" id="name" name="name" required>
+
+            <div class="form__subtitle" for="email">Enter Your Email:</div>
+            <input type="email" id="email" name="email" required>
+
+            <div class="form__subtitle" for="message">Message:</div>
+            <textarea id="message" name="message" rows="4" maxlength="500" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</section>
