@@ -1,15 +1,16 @@
 :root {
   scroll-behavior: smooth;
 
-  --color-pink: #D5006D;
+  --color-pink: #d5006d;
   --color-high-pink: #ff0084;
   --color-header: #331149;
-  --color-white: #FFFFFF; 
-  --background-color: #141414;; 
-  --color-ablue: #E1F5FE; 
-  --color-black: #212121; 
+  --color-footer: #220a31;
+  --color-white: #ffffff;
+  --background-color: #141414;
+  --color-ablue: #e1f5fe;
+  --color-black: #212121;
   --color-dark-black: #000000;
-  --color-black-fade: rgba(46, 46, 46, 0.85); 
+  --color-black-fade: rgba(46, 46, 46, 0.85);
 }
 
 h1,
@@ -22,7 +23,7 @@ p,
 a,
 li,
 span {
-    font-family: "popins", sans-serif;
+  font-family: "popins", sans-serif;
 }
 
 body {
@@ -37,15 +38,15 @@ a:hover,
 }
 
 body::-webkit-scrollbar {
-  width: 10px; 
+  width: 10px;
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--background-color); 
+  background: var(--background-color);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--color-header); 
+  background-color: var(--color-header);
   border-radius: 5px;
   border: 1px solid var(--color-pink);
 }
@@ -61,6 +62,7 @@ body::-webkit-scrollbar-thumb {
     transform: translateX(-100px);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0px);
     opacity: 1;
@@ -72,6 +74,7 @@ body::-webkit-scrollbar-thumb {
     transform: translateY(100px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0px);
     opacity: 1;
@@ -83,6 +86,7 @@ body::-webkit-scrollbar-thumb {
     transform: translateY(-100px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0px);
     opacity: 1;
@@ -94,6 +98,7 @@ body::-webkit-scrollbar-thumb {
     transform: translateX(100px);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0px);
     opacity: 1;

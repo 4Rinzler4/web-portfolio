@@ -25,7 +25,7 @@ const checkCarousel = () => {
       });
 
       let scrollInterval;
-      const scrollSpeed = 5000; 
+      const scrollSpeed = 5000;
 
       const startContinuousScroll = () => {
         scrollInterval = setInterval(() => {

@@ -3,64 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+
+    <link rel="icon" type="image/png" href="icons/favicon.png" />
+    <link rel="stylesheet" href="./styles/pages/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/embla-carousel/embla-carousel.css"
+    />
+
     <script
       src="https://unpkg.com/htmx.org@1.9.10"
       integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
       crossorigin="anonymous"
     ></script>
-    <title>Portfolio</title>
-    <link rel="icon" type="image/png" href="icons/favicon.png" />
-    <link rel="stylesheet" href="./styles/pages/index.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/embla-carousel/embla-carousel.css">
     <script src="https://unpkg.com/embla-carousel@latest"></script>
   </head>
+
   <body>
     <!-- Header section loaded dynamically -->
     <header
-      data-hx-trigger="load"
-      data-hx-swap="outerHTML"
       data-hx-get="header.partial.html"
+      data-hx-swap="outerHTML"
+      data-hx-trigger="load"
     ></header>
 
-    <!-- About section loaded dynamically -->
-    <section
-      data-hx-trigger="load"
-      data-hx-swap="outerHTML"
-      data-hx-get="about.partial.html"
-    ></section>
-
-    <!-- Skills section loaded dynamically -->
-    <section 
-      data-hx-trigger="load"
-      data-hx-swap="outerHTML"
-      data-hx-get="skills.partial.html"
-    ></section>
-
-    <!--Galery section loaded dynamically -->
-    <section
-      data-hx-trigger="load"
-      data-hx-swap="outerHTML"
-      data-hx-get="galery.partial.html"
-    ></section>
-
-    <!-- Contact section loaded dynamically -->
-     <section
-      data-hx-trigger="load"
-      data-hx-swap="outerHTML"
-      data-hx-get="contact.partial.html"
+    <!-- Main content -->
+    <main>
+      <!-- About section loaded dynamically -->
+      <section
+        data-hx-get="about.partial.html"
+        data-hx-swap="outerHTML"
+        data-hx-trigger="load"
       ></section>
-     
+
+      <!-- Skills section loaded dynamically -->
+      <section
+        data-hx-get="skills.partial.html"
+        data-hx-swap="outerHTML"
+        data-hx-trigger="load"
+      ></section>
+
+      <!-- Gallery section loaded dynamically -->
+      <section
+        data-hx-get="galery.partial.html"
+        data-hx-swap="outerHTML"
+        data-hx-trigger="load"
+      ></section>
+
+      <!-- Contact section loaded dynamically -->
+      <section
+        data-hx-get="contact.partial.html"
+        data-hx-swap="outerHTML"
+        data-hx-trigger="load"
+      ></section>
+    </main>
+
     <!-- Footer loaded dynamically -->
-     <footer
-     data-hx-trigger="laod"
-     data-hx-swap="outerHTML"
-     data-hx-get="footer.partial.html"
-     ></footer>
+    <footer
+      data-hx-get="footer.partial.html"
+      data-hx-swap="outerHTML"
+      data-hx-trigger="load"
+    ></footer>
 
     <script type="module" src="./scripts/index.js"></script>
   </body>
