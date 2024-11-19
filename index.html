@@ -11,11 +11,6 @@
       rel="stylesheet"
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/embla-carousel/embla-carousel.css"
-    />
-
     <script
       src="https://unpkg.com/htmx.org@1.9.10"
       integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
@@ -30,7 +25,7 @@
     <header
       data-hx-get="header.partial.html"
       data-hx-swap="outerHTML"
-      data-hx-trigger="revealed"
+      data-hx-trigger="load"
     ></header>
 
     <!-- Main content -->
@@ -39,14 +34,14 @@
       <section
         data-hx-get="about.partial.html"
         data-hx-swap="outerHTML"
-        data-hx-trigger="revealed"
+        data-hx-trigger="load"
       ></section>
 
       <!-- Skills section loaded dynamically -->
       <section
         data-hx-get="skills.partial.html"
         data-hx-swap="outerHTML"
-        data-hx-trigger="revealed"
+        data-hx-trigger="load"
       ></section>
 
       <!-- Gallery section loaded dynamically -->
@@ -60,7 +55,7 @@
       <section
         data-hx-get="contact.partial.html"
         data-hx-swap="outerHTML"
-        data-hx-trigger="revealed"
+        data-hx-trigger="load"
       ></section>
     </main>
 
@@ -68,7 +63,7 @@
     <footer
       data-hx-get="footer.partial.html"
       data-hx-swap="outerHTML"
-      data-hx-trigger="revealed"
+      data-hx-trigger="load"
     ></footer>
 
     <script type="module" src="./scripts/index.js"></script>

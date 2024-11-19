@@ -6,18 +6,19 @@
     </div>
     <div class="overlay"></div>
     <div class="content">
-        <h2>Contact <span>Me</span></h2>
+        <h2><span><i class="bx bx-heart"></i></span> Contact Me <span><i class="bx bx-heart"></i></span></h2>
         <form action="#" method="post">
-            <div class="form__subtitle" for="name">Enter Your Name:</div>
-            <input type="text" id="name" name="name" required>
 
-            <div class="form__subtitle" for="email">Enter Your Email:</div>
-            <input type="email" id="email" name="email" required>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" required />
 
-            <div class="form__subtitle" for="message">Message:</div>
-            <textarea id="message" name="message" rows="4" maxlength="500" required></textarea>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email" required />
 
-            <button type="submit">Send</button>
+            <textarea class="form__subtitle" id="message" name="message" rows="4" maxlength="500"
+                placeholder="Your Message Here..." required></textarea>
+<div class="button__send">
+            <button class="form__subtitle" type="submit">Send</button>
+        </div>
         </form>
     </div>
+
 </section>
