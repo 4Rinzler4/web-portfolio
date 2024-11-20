@@ -1,7 +1,7 @@
 :root {
   scroll-behavior: smooth;
 
-  --color-pink: #d5006d;
+  --color-pink: #d5006e;
   --color-high-pink: #ff0084;
   --color-header: #331149;
   --color-footer: #220a31;
@@ -11,6 +11,8 @@
   --color-black: #212121;
   --color-dark-black: #000000;
   --color-black-fade: rgba(46, 46, 46, 0.85);
+  --color-pink-fade: 214, 0, 111;
+  --color-header-fade: 51, 17, 73;
 }
 
 h1,
@@ -28,6 +30,7 @@ span {
 }
 
 body {
+  min-width: 368px;
   color: #ededed;
   background-color: var(--background-color);
   cursor: url(../images/cursors/light_cursor.png), auto;

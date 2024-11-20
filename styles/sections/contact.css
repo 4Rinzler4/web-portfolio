@@ -63,7 +63,8 @@ video {
 }
 
 .content h2 {
-    font-size: 56px;
+    text-wrap: nowrap;
+    font-size: clamp(35px, 1.8763rem + 1.3531vw, 56px);
     margin-bottom: 20px;
     -webkit-text-stroke: 2px var(--color-dark-black);
     span {

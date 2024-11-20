@@ -13,7 +13,7 @@
 
 .embla {
     border: 1px solid var(--color-header);
-    box-shadow: 0 0 5px var(--color-header), 0 0 25px var(--color-header);
+    box-shadow: 0 0 10px rgb(var(--color-header-fade), 0.7), 0 0 25px rgb(var(--color-header-fade), 0.2);
     overflow: hidden;
     margin-bottom: 20px;
     margin-top: 50px;
@@ -43,11 +43,13 @@
     box-shadow: 0 0 5px var(--color-pink), 0 0 25px var(--color-pink),
     0 0 50px var(--color-dark-black), 0 0 100px var(--color-dark-black);
     z-index: 1;
+    cursor: url(../../images/cursors/light_pointer.png);
   }
   
   .galery__images img {
     width: 100%;
     display: block;
+    border-radius: 15px; 
   }
   
  
