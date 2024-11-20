@@ -5,40 +5,43 @@ const checkCarousel = () => {
   ];
 
   carousels.forEach((carousel) => {
-    const slidesContainer = carousel.node.closest(".embla").querySelector(".embla__container");
+    const node = carousel.node;
+    if (!node) return;
+
+    const slidesContainer = node.closest(".embla").querySelector(".embla__container");
     const slides = Array.from(slidesContainer.querySelectorAll(".embla__slide"));
+    const repeatCount = 4;
 
-    if (carousel.node && slidesContainer && slides.length > 1) {
-      const repeatCount = 4;
+    if (slides.length <= 1 || !slidesContainer) return;
 
-      for (let i = 0; i < repeatCount; i++) {
-        const startClones = slides.map((slide) => slide.cloneNode(true));
-        const endClones = slides.map((slide) => slide.cloneNode(true)).reverse();
+    const startClones = slides.slice(0, repeatCount).map(slide => slide.cloneNode(true));
+    const endClones = slides.slice(-repeatCount).map(slide => slide.cloneNode(true)).reverse();
 
-        endClones.forEach((clone) => slidesContainer.insertBefore(clone, slidesContainer.firstChild));
-        startClones.forEach((clone) => slidesContainer.appendChild(clone));
-      }
+    slidesContainer.prepend(...endClones);
+    slidesContainer.append(...startClones);
 
-      const emblaApi = EmblaCarousel(carousel.node, { align: "start", loop: true });
-      emblaApi.on("init", () => {
-        emblaApi.scrollTo(slides.length * repeatCount, false);
-      });
+    const emblaApi = EmblaCarousel(node, { align: "start", loop: true });
+    emblaApi.on("init", () => emblaApi.scrollTo(slides.length * repeatCount, false));
 
-      let scrollInterval;
-      const scrollSpeed = 5000;
+    let scrollInterval;
+    const scrollSpeed = 5000;
 
-      const startContinuousScroll = () => {
+    const toggleScroll = (start) => {
+      if (start) {
         scrollInterval = setInterval(() => {
           carousel.direction === "next" ? emblaApi.scrollNext() : emblaApi.scrollPrev();
         }, scrollSpeed);
-      };
+      } else {
+        clearInterval(scrollInterval);
+      }
+    };
 
-      const stopContinuousScroll = () => clearInterval(scrollInterval);
+    toggleScroll(true); 
 
-      startContinuousScroll();
-      carousel.node.addEventListener("mouseenter", stopContinuousScroll);
-      carousel.node.addEventListener("mouseleave", startContinuousScroll);
-    }
+    const handleMouseEnterLeave = (event) => toggleScroll(event.type === "mouseenter" ? false : true);
+
+    node.addEventListener("mouseenter", handleMouseEnterLeave);
+    node.addEventListener("mouseleave", handleMouseEnterLeave);
   });
 };
 
