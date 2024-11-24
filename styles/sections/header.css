@@ -171,6 +171,21 @@
   }
 }
 
+#name.name {
+  font-family: "popins", sans-serif;
+  font-size: 56px;
+  background: none;
+  border: none;
+  transition: 0.3s ease;
+}
+
+#name.name:hover {
+  color: var(--color-pink);
+  text-shadow: 0 0 5px var(--color-white), 0 0 10px var(--color-white);
+  background: none;
+  cursor: url(../../images/cursors/light_pointer.png), pointer;
+}
+
 .home__content {
   max-width: 600px;
 }

@@ -50,6 +50,7 @@
 
 .card__info:hover {
     transform: translateY(-10px);
+    cursor: url(../../images/cursors/light_pointer.png), pointer;
 }
 
 .card__info i {

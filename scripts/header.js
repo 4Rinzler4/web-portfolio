@@ -39,3 +39,9 @@ window.addEventListener("scroll", () => {
   }
   lastScrollY = window.scrollY;
 });
+
+const element = document.getElementById("name");
+element.addEventListener('click', function() {
+  element.innerText = 'Drakosha';
+  console.log("its working")
+});

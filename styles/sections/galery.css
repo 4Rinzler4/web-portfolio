@@ -43,7 +43,7 @@
     box-shadow: 0 0 5px var(--color-pink), 0 0 25px var(--color-pink),
     0 0 50px var(--color-dark-black), 0 0 100px var(--color-dark-black);
     z-index: 1;
-    cursor: url(../../images/cursors/light_pointer.png);
+    cursor: url(../../images/cursors/light_pointer.png), pointer;
   }
   
   .galery__images img {
