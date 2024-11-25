@@ -2,6 +2,7 @@ function init() {
   import("./global.js");
   import("./header.js");
   import("./galery.js");
+  import("./galery2.js");
   import("./contact.js");
 
   const sections = document.querySelectorAll("section");
