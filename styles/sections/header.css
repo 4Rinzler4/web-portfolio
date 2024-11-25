@@ -255,7 +255,7 @@
   padding: 12px 28px;
   background-color: var(--color-pink);
   border-radius: 40px;
-  color: var(--color-dark-black);
+  color: var(--color-ablue);
   letter-spacing: 1px;
   text-decoration: none;
   font-weight: 600;
@@ -266,6 +266,7 @@
 }
 
 .btn-box:hover {
+  color: var(--color-dark-black);
   background-color: var(--color-white);
   box-shadow: 0 0 5px var(--color-pink), 0 0 25px var(--color-pink),
     0 0 50px var(--color-pink), 0 0 100px var(--color-pink),
